@@ -16,10 +16,11 @@ jobs:
         with:
           node-version: '22.12'
 
-      - name: Install and build 🔧
-        run: |
-          npm install
-          npm run build
+      - name: Install dependencies
+        un: npm install
+
+      - name: Build the project
+        run: npm run build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
