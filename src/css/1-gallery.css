@@ -1,0 +1,33 @@
+.gallery {
+  display: flex;
+  max-width: 1440px;
+  margin: 100px auto;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 48px 24px;
+}
+
+.gallery-item {
+  list-style: none;
+  max-width: 360px;
+  max-height: 300px;
+  flex-shrink: 0;
+}
+
+.gallery-link {
+  display: block;
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+}
+

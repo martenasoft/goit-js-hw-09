@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+
+<main>
+  <h1>Feedback</h1>
+  <ul>
+    <li><a class="nav-link {=$highlight-act}" href="./1-gallery.html">Gallery</a></li>
+    <li><a class="nav-link {=$highlight-act}" href="./index.html">Main</a></li>
+  </ul>
+  <form class="feedback-form" autocomplete="off" method="post">
+    <label>
+      Email
+      <input type="email" name="email" autofocus />
+    </label>
+    <label>
+      Message
+      <textarea name="message" rows="8"></textarea>
+    </label>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+
+
+<script type="module">
+  import { handleFrom } from './js/2-form.js';
+  handleFrom(document.querySelector('.feedback-form'));
+
+</script>
+</body>
+</html>
