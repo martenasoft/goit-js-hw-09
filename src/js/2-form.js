@@ -3,9 +3,7 @@ const formData = {
   message: ''
 };
 
-
 const STORAGE_KEY = 'feedback-form-state';
-
 const saveForm = (element) => {
   const fromElement = element.target;
   if (fromElement.tagName === undefined || !['INPUT', 'TEXTAREA'].includes(fromElement.tagName)) {
