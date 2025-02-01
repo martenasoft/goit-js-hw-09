@@ -40,6 +40,7 @@ const submitForm = (event) => {
     return;
   }
 
+  console.log(formData);
   form.message.value = form.email.value = '';
   localStorage.removeItem(STORAGE_KEY);
 };
