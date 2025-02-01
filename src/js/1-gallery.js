@@ -1,5 +1,6 @@
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.css";
+
 
 const images = [
   {
@@ -69,22 +70,22 @@ const images = [
 
 
 export function createGallery() {
-  const galleryContainer = document.querySelector('.gallery');
+  const gallery = document.querySelector('.gallery');
 
-  images.forEach(({ preview, original, description }) => {
-    const galleryItem = document.createElement('li');
-    galleryItem.classList.add('gallery-item');
-    galleryItem.innerHTML = `
-      <a class="gallery-link" href="${original}">
-        <img class="gallery-image" src="${preview}" alt="${description}" />
-      </a>
-    `;
-    galleryContainer.appendChild(galleryItem);
+  let li = '';
+  images.forEach(image => {
+    li += `<li class="gallery-item">
+                <a href="${image.original}" class="gallery-link" title="${image.description}">
+                    <img src="${image.preview}" alt="${image.description}" data-source="${image.original}" class="gallery-image">
+                </a>
+            </li>`;
   });
 
-
-  const lightbox = new SimpleLightbox('.gallery a', {
-    captionsData: 'alt',
-    captionDelay: 250,
-  });
+  if (li !== '') {
+    gallery.innerHTML = li;
+    const lightbox = new SimpleLightbox('.gallery-link', {
+      captionsData: 'alt',
+      captionDelay: 250,
+    });
+  }
 }
