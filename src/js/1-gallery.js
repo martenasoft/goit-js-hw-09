@@ -69,7 +69,7 @@ const images = [
 ];
 
 
-export function createGallery() {
+const createGallery = () => {
   const gallery = document.querySelector('.gallery');
 
   let li = '';
@@ -88,4 +88,6 @@ export function createGallery() {
       captionDelay: 250,
     });
   }
-}
+};
+
+createGallery();

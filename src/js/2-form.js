@@ -42,11 +42,12 @@ const submitForm = (event) => {
 
   form.message.value = form.email.value = '';
   localStorage.removeItem(STORAGE_KEY);
-
 };
 
-export function handleFrom(form) {
+const handleFrom = (form) => {
   loadForm(form);
   form.addEventListener('input', saveForm);
   form.addEventListener('submit', submitForm)
 }
+
+handleFrom(document.querySelector('.feedback-form'));
